@@ -1,0 +1,281 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title></title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    {% block header %} {% endblock %}
+  </head>
+  <body class="font-sans leading-normal tracking-normal">
+
+    <nav class="p-2 mt-0 fixed w-full z-10 pin-t shadow-md h-18 bg-white">
+      <div class="container mx-auto flex flex-row items-center justify-between">
+          <ul class="flex flex-row">
+            <li>
+              <a
+                class="text-gray-700 no-underline hover:text-gray-500 hover:no-underline"
+                href="{% url 'index' %}"
+              >
+                <img src="{% static 'login/logo.jpg' %}" class="h-20" alt="" />
+              </a>
+            </li>
+            <li class="flex flex-col my-auto">
+	      <p class="text-2xl font-extrabold text-[#0000D6]">E-RECALL</p>
+	      <p class="font-bold text-[#6002EE]">Make your recall easier</p>
+            </li>
+	  </ul>
+          <ul class="flex flex-row">
+            {% if user.is_authenticated %}
+            <li class="mr-3 text-[#6002EE] hover:animate-bounce">
+              <a
+                class="bg-[#D3E8FC] rounded-3xl no-underline py-3 px-7 font-bold"
+                href="{% url 'logout' %}"
+                >Log out &rightarrow;</a
+              >
+            </li>
+            {% else %}
+            <li class="mr-3 text-[#6002EE] hover:animate-bounce">
+              <a
+                class="bg-[#D3E8FC] rounded-3xl no-underline py-3 px-7 font-bold"
+                href="{% url 'login' %}"
+                >Log in &rightarrow;</a
+              >
+            </li>
+	    <li class="mr-3 border-l-2 border-[#021AEE]">
+	    </li>
+            <li class="mr-3 text-[#D48FF9] hover:animate-bounce">
+              <a
+                class="bg-[#021AEE] rounded-3xl no-underline py-3 px-7 font-bold"
+                href="{% url 'register' %}"
+                >Sign up &rightarrow;</a
+              >
+            </li>
+            {% endif %}
+          </ul>
+      </div>
+
+      <div class="container mx-auto flex flex-wrap items-center">
+        <div class="flex w-1/2 justify-center md:justify-start font-extrabold">
+	<ul class="flex flex-row">
+            <li>
+              <div class="flex justify-center">
+                <div>
+                  <div class="dropdown relative">
+                    <button
+                      class="ml-3 text-2xl text-[#021AEE]"
+                      id="dropdownMenuButton"
+                      onclick="showDropdown()"
+                    >
+                      Recalled products categories
+                    </button>
+                    <ul
+                      id="dropdown"
+                      class="dropdown-menu min-w-max absolute hidden bg-white text-base z-50 float-left py-2 list-none text-left rounded-lg shadow-lg mt-1 hidden m-0 bg-clip-padding border-none opacity-80"
+                      style="display: none"
+                    >
+                      <li>
+                        <a
+                          class="dropdown-item text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-gray-700 hover:bg-gray-100"
+			  href="{% url 'category' 1 %}"
+                          >Children</a
+                        >
+                      </li>
+                      <li>
+                        <a
+                          class="dropdown-item text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-gray-700 hover:bg-gray-100"
+                          href="{% url 'category' 2 %}"
+                          >HouseHold</a
+                        >
+                      </li>
+                      <li>
+                        <a
+                          class="dropdown-item text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-gray-700 hover:bg-gray-100"
+                          href="{% url 'category' 3 %}"
+                          >Health life & Beatuty</a
+                        >
+                      </li>
+                      <li>
+                        <a
+                          class="dropdown-item text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-gray-700 hover:bg-gray-100"
+                          href="{% url 'category' 4 %}"
+                          >Digital products</a
+                        >
+                      </li>
+                      <li>
+                        <a
+                          class="dropdown-item text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-gray-700 hover:bg-gray-100"
+                          href="{% url 'category' 5 %}"
+                          >Adventure & Travel equipment</a
+                        >
+                      </li>
+                      <li>
+                        <a
+                          class="dropdown-item text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-gray-700 hover:bg-gray-100"
+                          href="{% url 'category' 6 %}"
+                          >Clothing</a
+                        >
+                      </li>
+                      <li>
+                        <a
+                          class="dropdown-item text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-gray-700 hover:bg-gray-100"
+                          href="{% url 'category' 7 %}"
+                          >Transportation</a
+                        >
+                      </li>
+                      <li>
+                        <a
+                          class="dropdown-item text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-gray-700 hover:bg-gray-100"
+                          href="{% url 'category' 8 %}"
+                          >Food & Drinks</a
+                        >
+                      </li>
+                      <li>
+                        <a
+                          class="dropdown-item text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-gray-700 hover:bg-gray-100"
+                          href="{% url 'category' 9 %}"
+                          >Industrial products & Office</a
+                        >
+                      </li>
+                      <li>
+                        <a
+                          class="dropdown-item text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-gray-700 hover:bg-gray-100"
+                          href="{% url 'category' 10 %}"
+                          >Agriculture and Livestock</a
+                        >
+                      </li>
+                      <li>
+                        <a
+                          class="dropdown-item text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-gray-700 hover:bg-gray-100"
+                          href="{% url 'category' 11 %}"
+                          >Medicinal & Chemical</a
+                        >
+                      </li>
+                      <li>
+                        <a
+                          class="dropdown-item text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-gray-700 hover:bg-gray-100"
+                          href="{% url 'category' 12 %}"
+                          >Other</a
+                        >
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </li>
+	    <li class="ml-2 border-l-2 border-[#5E35BE]">
+	    </li>
+            <li>
+              <a
+                class="ml-2 no-underline text-2xl text-[#714CFE]"
+		href="{% url 'contact' %}"
+                >Contact Us</a
+              >
+            </li>
+
+	    <li class="ml-2 border-l-2 border-[#5E35BE]">
+	    </li>
+            <li>
+              <a
+                class="ml-2 no-underline text-2xl text-[#714CFE]"
+		href="{% url 'about' %}"
+                >About Us</a
+              >
+            </li>
+
+          </ul>
+        </div>
+        <div
+          class="flex w-1/2 pt-2 content-center justify-between md:w-1/2 md:justify-end"
+        >
+          <ul
+            class="list-reset flex justify-between flex-1 md:flex-none items-center"
+          >
+            <li class="mr-3">
+	      <form method="post" action="{% url 'search' %}" class="text-center w-96">
+            {% csrf_token %}
+                <div class="relative">
+                  <div
+                    class="flex absolute inset-y-0 right-2 items-center pl-1 pointer-events-none"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      class="w-5 h-5 text-gray-500 dark:text-gray-400"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+                      ></path>
+                    </svg>
+                  </div>
+                  <input
+                    type="search"
+		    name="keyword"
+                    class="block p-4 pr-10 w-full text-sm text-gray-900 bg-[#B2EEFF] rounded-2xl font-bold text-gray-300"
+                    placeholder="Search by product keyword or PRA number "
+                    required
+                  />
+                </div>
+              </form>
+            </li>
+	  </ul>
+	</div>
+      </div>
+
+
+    </nav>
+    <main class="flex flex-col pt-16 items-center min-h-[92vh]">
+      <div class="flex flex-col mt-12 max-w-6xl mx-auto items-center">
+        {% if messages %} {% for message in messages %}
+        <div
+          class="{% if message.tags == 'error' %} bg-rose-500 {% else %} bg-green-500 {% endif %} text-white p-2"
+        >
+          {{ message }}
+        </div>
+        {% endfor %} {% endif %}
+      </div>
+      {% block slider %} {% endblock %}
+      {% block content %} {% endblock %}
+    </main>
+
+    <footer
+        class="flex flex-col items-center bg-[#311B92] justify-content text-white text-sm py-2"
+      >
+        <ul class="flex flex-row xl:space-x-20">
+          <li>Contact Us</li>
+          <li>Links</li>
+        </ul>
+        <p>Copyright &copy; 2022 E-Recall</p>
+    </footer>
+
+    <script type="text/javascript">
+      function showDropdown() {
+        let click = document.getElementById('dropdown')
+        if (click.style.display === 'none') {
+          click.style.display = 'block'
+        } else {
+          click.style.display = 'none'
+        }
+      }
+      var ignoreClickOnMeElement = document.getElementById('dropdownMenuButton')
+
+      document.addEventListener('click', function (event) {
+        var isClickInsideElement = ignoreClickOnMeElement.contains(event.target)
+        console.log(isClickInsideElement)
+        if (!isClickInsideElement) {
+          let click = document.getElementById('dropdown')
+          if (click.style.display === 'block') {
+            click.style.display = 'none'
+          }
+        }
+      })
+    </script>
+  </body>
+</html>

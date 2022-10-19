@@ -1,0 +1,56 @@
+{% extends "login/base.html" %}
+
+
+{% block title %}
+<title>Contact</title>
+{% endblock %}
+
+{% block content %}
+
+<div class="flex flex-col max-w-3xl mx-auto mt-8 rounded-xl p-5 mt-10 bg-slate-50 shadow-md pl-7 pr-7 ">
+    <h2 class='text-3xl leading-6 font-bold text-gray-700 mb-4 mt-7 underline underline-offset-8 decoration-4 decoration-dashed'>Bought a dodgy item</h2>
+    <p class='text-xl font-bold text-gray-700 mb-4 mt-7'>Please enter the details of the dodgy item you have purchased and once we have received your information, we will verify it to determine if a recall is required</p>
+    <div class="mt-2 p-2">
+        <form method="post" class="flex flex-col space-y-1 input-area text-gray-700">
+            {% csrf_token %}
+	  <h3 class="font-bold text-2xl text-gray-700 italic">Product Information</h3>
+	  <div class="flex justify-between">
+	    <label class="m-auto font-bold">Product Name: </label>
+	    <input type="text"  name="pname" class="w-3/4 m-2 rounded-md border-gray-300 border-1 px-4 py-2"  maxlength="50" spellcheck="true" required />
+	  </div>
+	  <div class="flex justify-between">
+	    <label class="m-auto font-bold">Product brands:</label>
+	    <input type="text" name="pbr" class="w-3/4 m-2 rounded-md border-gray-300 border-1 px-4 py-2"  maxlength="20" spellcheck="true" required />
+	  </div>
+	  <div class="flex justify-between">
+	    <label class="m-auto font-bold">Product barcode</label>
+	    <input type="text" name="psn" class="w-3/4 m-2 rounded-md border-gray-300 border-1 px-4 py-2"  maxlength="20" spellcheck="true" required />
+	  </div>
+	  <div class="flex justify-between">
+	    <label class="m-auto font-bold">Product Detail:</label>
+	    <input type="text" name="pdetail" class="w-3/4 m-2 rounded-md border-gray-300 border-1 px-4 py-2"  maxlength="200" spellcheck="true" required />
+	  </div>
+	  <hr />
+	  <h3 class="font-bold text-2xl text-gray-700 italic">Your Information</h3>
+	  <div class="flex justify-between">
+	    <label class="m-auto font-bold">Full Name :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </label>
+	    <input type="text" name="name" class="w-3/4 m-2 rounded-md border-gray-300 border-1 px-4 py-2"  maxlength="20" spellcheck="true" required />
+	  </div>
+	  <div class="flex justify-between">
+	    <label class="m-auto font-bold">Mobile Phone:</label>
+	    <input type="text" name="phone" class="w-3/4 m-2 rounded-md border-gray-300 border-1 px-4 py-2"  maxlength="20" spellcheck="true" required />
+	  </div>
+	  <div class="flex justify-between">
+	    <label class="m-auto font-bold">Email Address:</label>
+	    <input type="email" name="email" class="w-3/4 m-2 rounded-md border-gray-300 border-1 px-4 py-2"  maxlength="50" spellcheck="true" required />
+	  </div>
+	  <div>
+	    <label>Do you give permission for this information to be shared with other government agencies:</label>
+	    <input type="checkbox" name="check" class="m-2 rounded-md border-gray-300 border-1 px-4 py-2" />
+	  </div>
+	    <button type="submit" class="bg-blue-800 w-full text-white h-10 rounded-md shadow-md hover:bg-blue-600 hover:text-gray-50">Confirm</button>
+        </form>
+    </div>
+</div>
+
+{% endblock %}

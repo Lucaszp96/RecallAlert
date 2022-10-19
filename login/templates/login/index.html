@@ -1,0 +1,124 @@
+{% extends "login/base.html" %} {% load static %}{% block slider %}
+<div
+  class="flex flex-row mt-10 shadow-md w-full px-10 h-64 items-center justify-between"
+>
+    <button
+      class="text-gray-500 font-bold border border-[#82B1FF] border-4 rounded-full no-underline w-10 h-10" onclick="leftarrow()"
+      >&leftarrow;</button
+    >
+    <a href="{% url 'category' 1 %}" class="slide"><img src="{% static 'login/1.jpg' %}" class="h-48 opacity-50" alt="" /></a>
+    <a href="{% url 'category' 2 %}" class="slide hover:animate-pulse"><img src="{% static 'login/2.jpg' %}" class="h-64" alt="" /></a>
+    <a href="{% url 'category' 3 %}" class="slide"><img src="{% static 'login/3.jpg' %}" class="h-48 opacity-50" alt="" /></a>
+    <a href="{% url 'category' 4 %}" class="slide" style="display:none"><img src="{% static 'login/4.jpg' %}" class="h-48 opacity-50" alt="" /></a>
+    <a href="{% url 'category' 5 %}" class="slide" style="display:none"><img src="{% static 'login/5.jpg' %}" class="h-48 opacity-50" alt="" /></a>
+    <a href="{% url 'category' 6 %}" class="slide" style="display:none"><img src="{% static 'login/6.jpg' %}" class="h-48 opacity-50" alt="" /></a>
+    <a href="{% url 'category' 7 %}" class="slide" style="display:none"><img src="{% static 'login/7.jpg' %}" class="h-48 opacity-50" alt="" /></a>
+    <a href="{% url 'category' 8 %}" class="slide" style="display:none"><img src="{% static 'login/8.jpg' %}" class="h-48 opacity-50" alt="" /></a>
+    <a href="{% url 'category' 9 %}" class="slide" style="display:none"><img src="{% static 'login/9.jpg' %}" class="h-48 opacity-50" alt="" /></a>
+    <a href="{% url 'category' 10 %}" class="slide" style="display:none"><img src="{% static 'login/10.jpg' %}" class="h-48 opacity-50" alt="" /></a>
+    <a href="{% url 'category' 11 %}" class="slide" style="display:none"><img src="{% static 'login/11.jpg' %}" class="h-48 opacity-50" alt="" /></a>
+    <a href="{% url 'category' 12 %}" class="slide" style="display:none"><img src="{% static 'login/12.jpg' %}" class="h-48 opacity-50" alt="" /></a>
+    <button
+      class="text-gray-500 font-bold border border-[#82B1FF] border-4 rounded-full no-underline w-10 h-10" onclick="rightarrow()"
+      >&rightarrow;</button
+    >
+
+  </div>
+</div>
+{% endblock %} {% block content %}
+<h3 class="p-4 text-center mt-7 text-3xl font-bold text-[#512DAB]">Select a product below to view more about the recall</h1>
+<div class="w-5/6 mx-auto mt-5 text-sm space-y-3 font-medium bg-white rounded-lg">
+
+  <ul class="space-y-4">
+    {% for product in products %}
+        <li class="flex flex-row justify-between font-bold odd:text-[#5E35B1] even:text-[#1E88E5] border-b border-gray-200 w-full my-auto">
+	<a href="{% url 'product' product.id %}">
+	    <p>{{ product.product_name }}</p>
+	</a>
+	  <p>{{ product.sn }}</p>
+	  <!-- <p>{{ product.category.title }}</p> -->
+        </li>
+    {% endfor %}
+  </ul>
+</div>
+
+<script type="text/javascript">
+let sliderImages = document.querySelectorAll(".slide"),
+  current = 1;
+
+function reset() {
+  for (let i = 0; i < sliderImages.length; i++) {
+    sliderImages[i].style.display = "none";
+    sliderImages[i].childNodes[0].className = ""
+    sliderImages[i].classList.remove("hover:animate-pulse")
+  }
+};
+function leftarrow(){
+    reset();
+    if (current == 0){
+	sliderImages[0].style.display = " block";
+	sliderImages[1].style.display = " block";
+	sliderImages[2].style.display = " block";
+	sliderImages[0].childNodes[0].className = "h-64"
+	sliderImages[0].classList.add("hover:animate-pulse")
+  
+	sliderImages[1].childNodes[0].className = "h-48 opacity-50"
+	sliderImages[2].childNodes[0].className = "h-48 opacity-50"
+	return
+      }
+    if (current == 1){
+	sliderImages[0].style.display = " block";
+	sliderImages[1].style.display = " block";
+	sliderImages[2].style.display = " block";
+	sliderImages[0].childNodes[0].className = "h-64"
+	sliderImages[0].classList.add("hover:animate-pulse")
+	sliderImages[1].childNodes[0].className = "h-48 opacity-50"
+	sliderImages[2].childNodes[0].className = "h-48 opacity-50"
+	current--;
+	return
+      }
+    current--;
+    sliderImages[current-1].style.display = " block";
+    sliderImages[current].style.display = " block";
+    sliderImages[current+1].style.display = " block";
+    sliderImages[current].childNodes[0].className = "h-64"
+    sliderImages[current].classList.add("hover:animate-pulse")
+    sliderImages[current-1].childNodes[0].className = "h-48 opacity-50"
+    sliderImages[current+1].childNodes[0].className = "h-48 opacity-50"
+  };
+
+function rightarrow(){
+    console.log(current)
+    reset();
+    if (current == 11){
+	sliderImages[9].style.display = " block";
+	sliderImages[10].style.display = " block";
+	sliderImages[11].style.display = " block";
+	sliderImages[11].childNodes[0].className = "h-64"
+	sliderImages[11].classList.add("hover:animate-pulse")
+	sliderImages[9].childNodes[0].className = "h-48 opacity-50"
+	sliderImages[10].childNodes[0].className = "h-48 opacity-50"
+	return
+      }
+    if (current == 10){
+	sliderImages[9].style.display = " block";
+	sliderImages[10].style.display = " block";
+	sliderImages[11].style.display = " block";
+	sliderImages[11].childNodes[0].className = "h-64"
+	sliderImages[11].classList.add("hover:animate-pulse")
+	sliderImages[9].childNodes[0].className = "h-48 opacity-50"
+	sliderImages[10].childNodes[0].className = "h-48 opacity-50"
+	current++;
+	return
+      }
+    current++;
+    sliderImages[current-1].style.display = " block";
+    sliderImages[current].style.display = " block";
+    sliderImages[current+1].style.display = " block";
+    sliderImages[current].childNodes[0].className = "h-64"
+    sliderImages[current].classList.add("hover:animate-pulse")
+    sliderImages[current-1].childNodes[0].className = "h-48 opacity-50"
+    sliderImages[current+1].childNodes[0].className = "h-48 opacity-50"
+  };
+</script>
+{% endblock %}

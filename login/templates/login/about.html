@@ -1,0 +1,132 @@
+{% extends "login/base.html" %}
+{% load static %}
+
+{% block title %}
+<title>about</title>
+{% endblock %}
+
+{% block content %}
+<div class="bg-[#DFCBFC] rounded-md">
+  <div class="flex flex-col p-10 w-5/6 mx-auto">
+    <h2 class="p-10 text-center text-5xl leading-9 font-extrabold italic text-[#7E57C2]">ABOUT US</h2>
+
+    <h3 class="ml-20 text-4xl font-extrabold italic text-left text-[#2979FF]">
+    OUR CULTURE
+    </h3>
+    <p class="text-2xl ml-20 mt-7 w-2/5 italic font-extrabold text-[#61B3FF]">
+    We really care about your shopping experience! 
+    It's hard to avoid recalled items in everyone's life and we really want to make your life a little less troublesome through our website.
+    </p>
+    <h3 class="m-10 text-4xl font-extrabold italic text-center text-[#626EDA]">
+    OUR MEMBERs
+    </h3>
+
+    <div class="flex flex-row  mt-7">
+      <p class="w-1/2"></p>
+      <img  src="{% static 'login/about/zhf.png' %}" class="h-24 rounded-full " alt="" />
+      <div class="w-2/5">
+      <p class="ml-5 text-2xl italic font-extrabold text-[#6002EE] opacity-40">
+    ·Ziheng Fu - a technical talent
+      </p>
+      <p class="ml-10 text-2xl italic font-extrabold text-[#6002EE] opacity-40">
+    said “Code is used for helping people”
+      </p>
+      </div>
+    </div>
+
+    <div class="flex flex-row my-7 w-3/5">
+      <p class="w-1/5 "></p>
+      <img  src="{% static 'login/about/pz.png' %}" class="h-24 rounded-full o alt="" />
+      <div class="w-3/5">
+      <p class="ml-5 text-2xl italic font-extrabold text-[#673AB7]">
+      ·Pei Zhang - a database talent
+      </p>
+      <p class="ml-10 text-2xl italic font-extrabold text-[#673AB7]">
+      said ”Data is really making a difference to people's lives. ”
+      </p>
+      </div>
+    </div>
+
+    <div class="flex flex-row  mt-7">
+      <p class="w-1/2"></p>
+      <img  src="{% static 'login/about/mh.png' %}" class="h-24 rounded-full o alt="" />
+      <div class="w-2/5">
+      <p class="ml-5 text-2xl italic font-extrabold text-[#6002EE] opacity-40">
+    · Mei Han- a desiner
+      </p>
+      <p class="ml-10 text-2xl italic font-extrabold text-[#6002EE] opacity-40">
+      said”the start of the website is just hope this web can help my families live a healthy life.”
+      </p>
+      </div>
+    </div>
+
+    <div class="flex flex-row my-7 w-3/5">
+      <p class="w-1/5 "></p>
+      <img  src="{% static 'login/about/xfs.png' %}" class="h-24 rounded-full " alt="" />
+      <div class="w-3/5">
+      <p class="ml-5 text-2xl italic font-extrabold text-[#673AB7]">
+      ·Xiaofan Shi -a leader
+      </p>
+      <p class="ml-10 text-2xl italic font-extrabold text-[#673AB7]">
+      said “just want more and more people can live a better life”
+      </p>
+      </div>
+    </div>
+
+
+    <div class="flex flex-row  mt-7">
+      <p class="w-1/2 "></p>
+      <img  src="{% static 'login/about/mqw.png' %}" class="h-24 rounded-full " alt="" />
+      <div class="w-2/5">
+      <p class="ml-5 text-2xl italic font-extrabold text-[#6002EE] opacity-40">
+      ·Mengqiao Wang - a front-side talent
+      </p>
+      <p class="ml-10 text-2xl italic font-extrabold text-[#6002EE] opacity-40">
+      said “Aesthetics make it easier to use.”
+      </p>
+      </div>
+    </div>
+
+    <div class="flex flex-row my-7 w-3/5">
+      <p class="w-1/5 "></p>
+      <img  src="{% static 'login/about/rtz.png' %}" class="h-24 rounded-full " alt="" />
+      <div class="w-3/5">
+      <p class="ml-5 text-2xl italic font-extrabold text-[#673AB7]">
+      ·Ruiting Zhang -a writer
+      </p>
+      <p class="ml-10 text-2xl italic font-extrabold text-[#673AB7]">
+      said “Trying to save everyone from the clutter of information.”
+      </p>
+      </div>
+    </div>
+
+
+
+    <h3 class="ml-20 mt-10 text-4xl font-extrabold italic text-left text-[#61B3FF]">
+    TOOLS
+    </h3>
+    <p class="text-2xl ml-20 mt-7 w-2/5 italic font-extrabold text-[#82B1FF]">
+    We have applies python, mysql, figma, and django on our project.
+    </p>
+
+
+      <img  src="{% static 'login/about/milestone.jpg' %}" class="w-5/6 mx-auto m-5" alt="" />
+
+      <div class="w-5/6 mx-auto bg-[#EDE7F6] rounded-[60px] text-[#7E57C2] text-2xl italic">
+	<p class="m-10">
+	Everyone is overwhelmed by the hectic and challenging life. The epidemic has left everyone experiencing either physical illness or the psychological barriers of isolation. It has forced everyone to think seriously about the importance of physical safety. 
+
+	</p>
+	<p class="m-10">
+	So we spent four months of our lives working on this website, WHICH is one half of one percent of our entire lives. We really hope that our website will give you a breather, we really hope that our website will make your hectic life a little easier as the clutter of product recalls on the internet comes whistling at you. 
+	Even if it's just a little help, it makes this one in two percent of our lives worthwhile.
+	</p>
+      </div>
+
+
+
+
+  </div>
+</div>
+
+{% endblock %}
