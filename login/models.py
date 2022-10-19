@@ -23,6 +23,7 @@ class Product(models.Model):
 
     created_date = models.DateTimeField(auto_now=True)
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
+    category_name = models.CharField(max_length=100)
 
     class Meta:
         ordering = ["-created_date"]
