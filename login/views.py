@@ -7,6 +7,29 @@ from django.db.models import Q
 
 from .forms import UserRegisterForm
 from .models import Category, Message as C_Message, Product
+from django.contrib.auth.models import User
+from .serializers import MyTokenSerializer
+from django.http import HttpResponse
+from rest_framework.views import Response
+from rest_framework.permissions import IsAuthenticated
+from rest_framework import status, viewsets
+from .forms import UserRegisterForm
+
+
+cat_names = [
+    "Children",
+    "Household",
+    "Healthy life & Beauty",
+    "Digital products",
+    "Adventure & Travel equipment",
+    "Clothing",
+    "Transportation",
+    "Food & Drinks",
+    "Industrial products & Office",
+    "Agriculture and Livestock",
+    "Medicinal & Chemical",
+    "Other",
+]
 
 
 def index(request):
@@ -105,3 +128,22 @@ def contact(request):
                          f"{name}'s message was submitted successfully！")
 
     return render(request, "login/contact.html", context)
+
+
+def ListShops(requests):
+    return HttpResponse("this is shop list")
+
+
+class LoginViewSet(viewsets.ModelViewSet):
+    queryset = User.objects.all()
+    serializer_class = MyTokenSerializer
+    permission_classes = (IsAuthenticated,)
+
+    def post(self, request, *args, **kwargs):
+        serializer = self.get_serializer(data=request.data)
+        try:
+            serializer.is_valid(raise_exception=True)
+        except Exception as e:
+            raise ValueError(f'Validation failed:{e}')
+
+        return Response(serializer.validated_data, status=status.HTTP_200_OK)
