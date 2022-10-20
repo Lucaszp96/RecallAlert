@@ -1,0 +1,23 @@
+{% extends "login/base.html" %}
+
+
+{% block title %}
+<title>Search</title>
+{% endblock %}
+
+{% block content %}
+<h3 class="p-4 text-center mt-12 text-3xl font-bold text-gray-700">{{ keyword }}</h1>
+<div class="w-5/6 mx-auto mt-5 text-sm space-y-3 font-medium text-gray-900 bg-white rounded-lg">
+
+    {% for product in products %}
+    <a href="{% url 'product' product.id %}" class="block py-2 px-4 w-full border-b border-gray-200 cursor-pointer hover:bg-gray-100 hover:text-gray-700">
+        <div class="flex flex-row justify-between">
+	  <p class="font-bold">{{ product.product_name }}</p>
+	  <p>{{ product.sn }}</p>
+	  <!-- <p>{{ product.category.title }}</p> -->
+        </div>
+    </a>
+    {% endfor %}
+</div>
+
+{% endblock %}

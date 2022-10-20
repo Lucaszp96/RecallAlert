@@ -1,0 +1,37 @@
+{% extends "login/base.html" %} {% block title %}
+<title>{{ product.product_name }}</title>
+{% endblock %} {% block content %}
+<div
+  class="flex flex-col max-w-3xl mx-auto mt-8 rounded-xl p-5 mt-10 bg-slate-50 shadow-md pl-7 pr-7"
+>
+<div class="flex flex-row justify-between">
+  <p>PRA number : {{ product.sn }}</p>
+  <p>Published date : Recalled on {{ product.created_date }}</p>
+</div>
+  <hr />
+  <h3 class="text-xl font-bold text-gray-700 text-center mb-4 mt-7">
+    {{ product.product_name }}
+  </h3>
+  <div class="mt-7 p-2 text-gray-700 space-y-1">
+    <img src="{{ product.img }}" alt="" class="w-64 rounded-xl mx-auto" />
+
+    <h4 class="italic text-xl font-bold">Available sale date</h4>
+    <p>{{ product.avaiable_sale_date }}</p>
+    <h4 class="italic text-xl font-bold">Product description</h4>
+    <p>{{ product.content }}</p>
+    <h4 class="italic text-xl font-bold">What are the defects?</h4>
+    <p>{{ product.defects }}</p>
+    <h4 class="italic text-xl font-bold">What are the hazards?</h4>
+    <p>{{ product.hazards }}</p>
+    <h4 class="italic text-xl font-bold">What should consumers do?</h4>
+    <p>{{ product.consumers }}</p>
+    <h4 class="italic text-xl font-bold">What are the supplier(s)?</h4>
+    <p>{{ product.supplier }}</p>
+    <h4 class="italic text-xl font-bold">What are the trader(s)?</h4>
+    <p>{{ product.traders }}</p>
+    <h4 class="italic text-xl font-bold">What are the sale venues?</h4>
+    <p>{{ product.sold_venues }}</p>
+  </div>
+</div>
+
+{% endblock %}
