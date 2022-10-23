@@ -38,6 +38,9 @@ def index(request):
     # print(products)
     return render(request, "login/index.html", context)
 
+def guidance(request):
+    context = {}
+    return render(request, "login/guidance.html", context)
 
 def about(request):
     context = {}

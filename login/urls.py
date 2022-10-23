@@ -10,6 +10,7 @@ router.register('login', LoginViewSet)
 
 urlpatterns = [
     path("", views.index, name="index"),
+    path("guidance/", views.guidance, name="guidance"),
     path("about/", views.about, name="about"),
     path("law_1/", views.law_1, name="law_1"),
     path("law_2/", views.law_2, name="law_2"),
