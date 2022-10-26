@@ -62,6 +62,16 @@ def law_3(request):
     return render(request, "login/law_3.html", context)
 
 
+def com_law_1(request):
+    context = {}
+    return render(request, "login/com_law_1.html", context)
+
+
+def com_law_3(request):
+    context = {}
+    return render(request, "login/com_law_3.html", context)
+
+
 def category(request, cid):
     context = {}
     # category = get_object_or_404(Category, id=cid)
