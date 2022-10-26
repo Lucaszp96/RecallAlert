@@ -42,6 +42,10 @@ def guidance(request):
     context = {}
     return render(request, "login/guidance.html", context)
 
+def research(request):
+    context = {}
+    return render(request, "login/research.html", context)
+
 def about(request):
     context = {}
     return render(request, "login/about.html", context)
