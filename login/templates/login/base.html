@@ -24,8 +24,26 @@
             <li class="flex flex-col my-auto">
 	      <p class="text-2xl font-extrabold text-[#0000D6]">E-RECALL</p>
 	      <p class="font-bold text-[#6002EE]">Make your recall easier</p>
+        <a href="{% url 'guidance' %}"><img src="{% static 'login/guidance/guidance.jpg' %}" style="position: relative; left:-60px; top: 8px" class="h-9 rounded-full " ></a>
             </li>
 	  </ul>
+
+    <div style="position: relative; left:410px" id="google_translate_element"></div>
+    <script>
+     function googleTranslateElementInit() {
+     new google.translate.TranslateElement({
+     pageLanguage: 'en',
+     includedLanguages: 'en,zh-CN,hr,cs,da,nl,fr,de,el,iw,hu,ga,it,ja,ko,pt,ro,ru,sr,es,th,vi',
+     autoDisplay: false,
+     gaTrack: true,
+     gaId: 'UA-4334041-9',
+     layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+     }, 'google_translate_element');
+   }
+    </script>
+
+    <script src="http://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
           <ul class="flex flex-row">
             {% if user.is_authenticated %}
             <li class="mr-3 text-[#6002EE] hover:animate-bounce">
@@ -199,17 +217,17 @@
                                        Legislation 
                                 </li>
                                 <li>
-				  <a href="#" class="hover:text-blue-600">
+				  <a href="{% url 'law_1' %}" class="hover:text-blue-600">
                                         Australian Consumer Law
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="#" class="hover:text-blue-600">
+                                    <a href="{% url 'law_3' %}" class="hover:text-blue-600">
                                        Product liablity
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="#" class="hover:text-blue-600">
+                                    <a href="{% url 'law_2' %}" class="hover:text-blue-600">
                                         Fines & Penalties
                                     </a>
                                 </li>
