@@ -33,7 +33,7 @@ def index(request):
     context = {}
     # for cat in Category.objects.all():
     #     print(cat.id, cat.title)
-    products = Product.objects.all()[:5]
+    products = Product.objects.all()[:10]
     context['products'] = products
     # print(products)
     return render(request, "login/index.html", context)
