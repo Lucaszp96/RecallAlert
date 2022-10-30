@@ -1,7 +1,8 @@
 from django.urls import path
 from django.contrib.auth import views as auth_views
 from . import views
-from rest_framework_simplejwt.views import (TokenObtainPairView, TokenRefreshView)
+from rest_framework_simplejwt.views import (TokenObtainPairView,
+                                            TokenRefreshView)
 from .views import LoginViewSet
 from rest_framework.routers import DefaultRouter
 
@@ -16,6 +17,7 @@ urlpatterns = [
     path("law_1/", views.law_1, name="law_1"),
     path("law_2/", views.law_2, name="law_2"),
     path("law_3/", views.law_3, name="law_3"),
+    path("law_4/", views.law_4, name="law_4"),
     path("com_law_1/", views.com_law_1, name="com_law_1"),
     path("com_law_3/", views.com_law_3, name="com_law_3"),
     path("register/", views.register, name="register"),
