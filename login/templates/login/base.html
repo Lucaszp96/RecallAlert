@@ -185,6 +185,37 @@
               </div>
             </li>
 
+
+            <li class="ml-2 leading-9 text-[#5E35BE]">|
+              <li>
+                            <button href="{% url 'research' %}" id="research-dropdown-button" class="flex justify-between items-center w-full ml-3 text-2xl text-[#021AEE] "
+                  onclick="showResearch()" >
+                                Research
+                            </button>
+                            <div id="research-dropdown" class="grid hidden absolute z-8 font-bold grid-cols-1 bg-white shadow-md opacity-98 rounded-lg">
+                                <div class="p-2 pb-0 md:pb-2 border-r-2 border-dotted border-indigo-100 text-[#72BAF0]">
+                                    <ul class="space-y-1" aria-labelledby="research-dropdown-button">
+                                        <li>
+                  <a href="{% url 'research_1' %}" class="hover:text-blue-600">
+                                                Statistics
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="{% url 'research_2' %}" class="hover:text-blue-600">
+                                               Agency Report
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="{% url 'research_3' %}" class="hover:text-blue-600">
+                                                Recommended solutions
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                </li>
+
 	    <li class="ml-2 leading-9 text-[#5E35BE]">|
 	    </li>
             <li>
@@ -355,6 +386,16 @@
         }
       }
 
+      function showResearch() {
+        let click = document.getElementById('research-dropdown')
+
+          if (click.classList.contains("hidden")) {
+		  click.classList.remove("hidden");
+		}else{
+		  click.classList.add("hidden");
+	  }
+      }
+
       function showLaw() {
         let click = document.getElementById('mega-menu-dropdown')
 
@@ -366,6 +407,8 @@
       }
 
       var ignoreClickOnMeElement = document.getElementById('dropdownMenuButton')
+
+      var ignoreResearch = document.getElementById('research-dropdown-button')
 
       var ignoreLaw = document.getElementById('mega-menu-dropdown-button')
 
@@ -379,6 +422,18 @@
         }
       })
 
+
+      document.addEventListener('click', function (event) {
+        var isClickInsideElement = ignoreResearch.contains(event.target)
+        if (!isClickInsideElement) {
+          let click = document.getElementById('research-dropdown')
+          if (!click.classList.contains("hidden")) {
+		click.classList.add("hidden");
+	  }
+        }
+      })
+
+      
       document.addEventListener('click', function (event) {
         var isClickInsideElement = ignoreLaw.contains(event.target)
         if (!isClickInsideElement) {
