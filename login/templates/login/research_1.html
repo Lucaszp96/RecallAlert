@@ -1,0 +1,100 @@
+{% extends "login/base.html" %}
+{% load static %}
+
+{% block title %}
+<title>research</title>
+{% endblock %}
+
+{% block content %}
+<div class="rounded-md">
+  <div class="flex flex-col p-10 mx-auto">
+    <h1 class="p-10 text-5xl leading-9 font-extrabold text-left text-[#483D8B]">Research and reports overview</h1>
+    </br>
+    <body> <img src="{% static 'login/guidance/bar.jpg' %}" class="h-15"></body>
+
+    <h2 class="ml-20 mr-20 text-3xl  font-extrabold text-left text-[#000000]"></h2>
+    </br>
+    <h3 class="ml-20 mr-20 text-2xl font-extrabold text-left text-[#000000]">
+      Recalled product market situation </h3>
+    <h3 class="ml-20 mr-20 text-2xl text-left text-[#000000]">
+    - Over a million recalled products still in circulation in Australia</br>
+    Australians could be at risk of injuries or even death from 6.6 million individual products currently under voluntary recall, new figures show.
+    Each year the ACCC is notified of about 650 consumer product recalls, but only about half of affected products are returned to sellers. Excluding motor vehicle recalls, this amounts to about 1.7 million recalled products remaining in people’s homes, or almost one in four Australian households exposed to potential hazards.</h3>
+    </br>
+
+
+    </h3></br>
+    <p class="ml-20 mr-20 border border-primary text-4xl ml-20 mt-7 w-2/5 font-extrabold text-[#000000]">
+    <h4 class="bg-[#EDE7F6] rounded-[60px] text-[#7E57C2] ml-20 mr-20 text-3xl font-extrabold text-left text-[#483D8B]">On this page</h4></br>
+    </br>
+      <a href="#why">
+    <h4 class="ml-20 mr-20 text-2xl text-left text-[#000000]" href="#why">- Why do we collect food recall data?</h4></a></br>
+      <a href="#Stat">
+    <h4 class="ml-20 mr-20 text-2xl text-left text-[#000000]" href="#Stat">- Statistics in EU, US and Australia</h4></a></br>
+       <a href="#Food">
+    <h4 class="ml-20 mr-20 text-2xl text-left text-[#000000]" href="#Food">- Food recall figures in Australia</h4></a></br>
+    </br>
+
+      <h6 class="bg-[#E6E6FA] ml-20 mr-20 mx-auto square-[60px] text-[#000000] text-2xl" id="why">
+      <p class="m-5 font-extrabold">
+      Why do we collect food recall data?
+      <p class="m-5">
+      Figure 1: Food recalls by year 2012-2021
+      <p class="m-5">
+       We collect data on Australian food recalls to identify trends and common issues in the food industry and help find ways to prevent future incidents.
+      </p>
+      <p class="m-5">
+       An analysis of annual food recall statistics for the last 10 years is below. For statistics on allergen-related recalls see Undeclared allergen food recall statistics. Our statistics are updated annually.</p>
+      </h6></br>
+      </p>
+
+    <h5 class="ml-20 text-4xl font-extrabold italic text-left text-[#000000]" id="Stat">
+    </br>Statistics in EU, US and Australia</h5>
+    </br>
+     <div style="text-align: center;right:5">
+         <h5 class="text-centre">
+      <img src="{% static 'login/guidance/picture1.jpg' %}" style="margin:auto"> </h5></div>
+    </p>
+
+      <h6 class="bg-[#E6E6FA] ml-20 mr-20 mx-auto square-[60px] text-[#000000] text-2xl" id="Food">
+      <p class="m-5 font-extrabold">
+      Food recall statistics (1 January 2012 – 31 December 2021)
+      <p class="m-5">
+      Figure 1: Food recalls by year 2012-2021
+      </p>
+      <p class="m-5"><img src="{% static 'login/research/figure1.png' %}" style="margin:5px;width:657px; margin:auto"></br>
+       Between 2012 and 2021, FSANZ coordinated 776 recalls, including 80 recalls in 2021 (see Figure 1). The 10-year average increased from 76 recalls per year (2011-2020) to 78 recalls per year (2012-2021).</p>
+       <p class="m-5">
+       The volume of food recalled represents a very small proportion of the large amount of food products available in the Australian market. Most recalls are precautionary and initiated by food businesses to ensure that potentially unsafe food is removed from distribution and sale. Only a small amount of recalls are linked to a suspected or confirmed illness/injury. </p>
+      <p class="m-5">
+      An increase in the number of food recalls indicates that the system works to safeguard the food supply. Over time broader regulatory oversight, improved self-monitoring by food businesses and greater consumer vigilance have helped to strengthen problem detection. Continued advancements in food technology, analytical testing and traceability are also expected to influence the number of food recalls.</p>
+      </br>
+
+      <p class="m-5">
+      Figure 1: Food recalls by year 2012-2021
+      </p>
+      <p class="m-5"><img src="{% static 'login/research/figure2.png' %}" style="margin:5px;width:657px; margin:auto"></br>
+      There are two types of food recall – consumer and trade. A trade recall is conducted when the food has not been available for direct purchase by the public, such as food sold to wholesalers and caterers. A consumer recall is conducted when the food has been available for retail sale.</p>
+       <p class="m-5">
+      Between 2012 and 2021, consumer recalls accounted for 86% of all food recalls and trade recalls 14% (see Figure 2).</p>
+      </p>
+      </br>
+
+      <p class="m-5">
+      Figure 3: Food recalls by year and recall classification 2012-2021
+      </p>
+      <p class="m-5"><img src="{% static 'login/research/figure3.png' %}" style="margin:5px;width:657px; margin:auto"></br>
+      Between 2012 and 2021 most food recalls were due to undeclared allergens (335 recalls; 43%) and microbial contamination (201 recalls; 26%) as shown in Figure 3. Food recalls for undeclared allergens, microbial contamination, chemical/contaminant and 'other' show an increasing trend. Food recalls for foreign matter are on a decreasing trend.   </p>
+      </h6></br>
+      </p>
+  </div>
+</div>
+<script>
+    function a()
+
+    {
+
+    document.getElementById("b1").style.color="#6495ED";}
+
+    </script>
+{% endblock %}
