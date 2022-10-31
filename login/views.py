@@ -48,17 +48,6 @@ def research(request):
     context = {}
     return render(request, "login/research.html", context)
 
-def research_1(request):
-    context = {}
-    return render(request, "login/research_1.html", context)
-
-def research_2(request):
-    context = {}
-    return render(request, "login/research_2.html", context)
-
-def research_3(request):
-    context = {}
-    return render(request, "login/research_3.html", context)
 
 def about(request):
     context = {}
