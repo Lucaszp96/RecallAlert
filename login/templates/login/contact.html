@@ -6,8 +6,203 @@
 {% endblock %}
 
 {% block content %}
+<link rel="stylesheet" rel="preload" as="style" onload="this.rel='stylesheet';this.onload=null">
+    href="https://fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic">
+  <link rel="stylesheet" rel="preload" as="style" onload="this.rel='stylesheet';this.onload=null"
+    href="https://unpkg.com/normalize.css@8.0.0/normalize.css">
+<!--  <link rel="stylesheet" rel="preload" as="style" onload="this.rel='stylesheet';this.onload=null"-->
+<!--    href="https://unpkg.com/milligram@1.3.0/dist/milligram.min.css">-->
 
-<div class="flex flex-col max-w-3xl mx-auto mt-8 rounded-xl p-5 mt-10 bg-slate-50 shadow-md pl-7 pr-7 ">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            position: relative;
+        }
+        .containerr{
+            width: 380px;
+            height: 490px;
+             background-color: #aaccff;
+             border-radius: 40px;
+            position: relative;
+            float: right;
+        left: 450px;
+        top: -600px;
+
+        font-size: 90;
+        display: none;
+
+    }
+    div .title{
+        position: relative;
+<!--        left: 20px;-->
+        width: 370px;
+        height: 72px;
+        top: -0px;
+        font-size: 20px;
+        text-align: right;
+        font-size: 3rem;
+        top: 20px;
+        text-align:right;
+        color: #3f3f3f;
+<!--        float:right;-->
+
+
+        /* margin-top: 40px; */
+
+
+    }
+
+    .video{
+        color: #3f3f3f;
+        font-style: normal;
+        font-weight: 700;
+
+    }
+        .background{
+            width: 340px;
+            height: 360px;
+            background-image: url("../static/login/background.png");
+            background-size: 100% auto;
+            background-repeat: no-repeat;
+            background-position: 0 100px;
+            position: absolute;
+            left: 20px;
+            top: 50px;
+            /* z-index: 1; */
+        }
+        .buttonlist{
+            float: right;
+        }
+        .confirm{
+            float:right;
+            color: aliceblue;
+            font-size:16px;
+        }
+        .buttonlist{
+            position: relative;
+            top: 40px;
+            /* left: 50px; */
+        }
+        .buttonlist div a{
+            display: block;
+            width: 70px;
+            height: 30px;
+            padding-left: 8px;
+            cursor:pointer;
+
+        }
+        #startButton{
+            background-color: #1e88e5;
+            color: #e2F2F2;
+
+        }
+        #resetButton{
+            background-color: aliceblue;
+            color: #1e88e5;
+
+        }
+        .border{
+            background-color: white;
+            width: 250px;
+            height: 170px;
+        }
+        #confirm{
+            float:right;
+            left: 90px;
+            display: block;
+            width: 70px;
+            height: 30px;
+            background-color: #1e88e5;
+            padding-left: 3px;
+            color: white;
+            /* margin: 0 auto; */
+            line-height: 30px;
+            font-size: 12px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        select{
+            background-color: #82b1ff;
+            border-radius: 10px;
+            width: 200px;
+
+        }
+        label{
+            color: #3f3f3f;
+        }
+
+
+        .result{
+            border-radius: 10px;
+            width: 300px;
+        }
+        #iron1 {
+            position: absolute;
+<!--            background-color:green;-->
+            background-image: url("../static/login/arrow.png");
+            display: block;
+            margin-top: 25px;
+            background-size: 40px auto;
+            width: 35px;
+            left:2px;
+            cursor:pointer;
+
+            height: 20px;
+
+
+
+
+
+        }
+        button .button{
+            float:right;
+            display: block;
+            width: 30px;
+            height: 20px;
+            background-color: #1e88e5;
+            padding-left: 3px;
+            color: white;
+            margin: 0 auto;
+            line-height: 20px;
+            font-size: 12px;
+            font-family: Arial, Helvetica, sans-serif;
+
+
+        }
+        #title {
+            position: relative;
+        }
+        .camera{
+            position: absolute;
+            float:right;
+            left: 700px;
+            top: 10px;
+            width: 20px;
+            height: 20px;
+            background-size: 100% auto;
+            background-position: center;
+            background-image: url("../static/login/iron.png");
+            cursor:pointer;
+        }
+
+        .result1{
+        background-color:white;
+        }
+        #b{
+        position:relative;}
+
+
+
+
+
+
+
+
+    </style>
+<div id="whole">
+	<div class="flex flex-col max-w-3xl mx-auto mt-8 rounded-xl p-5 mt-10 bg-slate-50 shadow-md pl-7 pr-7 ">
     <h2 class='text-3xl leading-6 font-bold text-gray-700 mb-4 mt-7 underline underline-offset-8 decoration-4 decoration-dashed'>Bought a dodgy item</h2>
     <p class='text-xl font-bold text-gray-700 mb-4 mt-7'>Please enter the details of the dodgy item you have purchased and once we have received your information, we will verify it to determine if a recall is required</p>
     <div class="mt-2 p-2">
@@ -22,9 +217,10 @@
 	    <label class="m-auto font-bold">Product brands:</label>
 	    <input type="text" name="pbr" class="w-3/4 m-2 rounded-md border-gray-300 border-1 px-4 py-2"  maxlength="20" spellcheck="true" required />
 	  </div>
-	  <div class="flex justify-between">
+	  <div  id="b" class="flex justify-between">
 	    <label class="m-auto font-bold">Product barcode</label>
-	    <input type="text" name="psn" class="w-3/4 m-2 rounded-md border-gray-300 border-1 px-4 py-2"  maxlength="20" spellcheck="true" required />
+	    <input id="barcodeR" type="text" name="psn" class="w-3/4 m-2 rounded-md border-gray-300 border-1 px-4 py-2"  maxlength="20" spellcheck="true" required />
+          <div class="camera"></div>
 	  </div>
 	  <div class="flex justify-between">
 	    <label class="m-auto font-bold">Product Detail:</label>
@@ -52,5 +248,183 @@
         </form>
     </div>
 </div>
+
+	<div class="containerr" >
+        <div id="title">
+<!--           <div id="iron1">111</div>-->
+            <h2>
+                <div class="title"> Product Barcode Scanner </div>
+
+<!--                <div class="titleSecond">Scanner</div>-->
+            </h2>
+        </div>
+        <br>
+        <br>
+        <div class="background">
+            <div id="sourceSelectPanel">
+<!--                 style="display:none"-->
+
+                <br>
+                <br>
+                <br>
+
+                <br>
+
+
+                <label for="sourceSelect" >Choosing Video Source:</label>
+                <br>
+
+                <select id="sourceSelect" style="max-width:400px" >
+                </select>
+              </div>
+
+            <div class="buttonlist">
+                <div> <a class="button" id="startButton" >Shoot</a></div>
+                <br>
+                <br>
+                <div><a class="button" id="resetButton" >Reset</a></div>
+                <br>
+
+
+                <br>
+                <div> <a class="button" id="confirm" > Confirm</a></div>
+            </div>
+            <br>
+
+              <div class="video"> Viewing Frame:
+                <br>
+                <div class="border"> <video id="video" width="250" height="170" style=" border: 1px solid rgb(255 255 255)"></video></div>
+
+              </div>
+            <br>
+              <label>Result:</label>
+               <span id="result1"></span>
+              <pre><code id="result"></code></pre>
+
+
+        </div>
+        </div>
+</div>
+
+    <script type="text/javascript" src="https://unpkg.com/@zxing/library@latest/umd/index.min.js"></script>
+  <script type="text/javascript">
+    window.addEventListener('load', function () {
+
+    var camera=document.getElementsByClassName("camera")[0];
+    var background=document.getElementsByClassName("containerr")[0];
+    var iron=document.getElementById("iron1");
+    var confirm=document.getElementById("confirm");
+
+
+
+    camera.onclick=function(){
+        background.style.display="block";
+        // document.getElementsByTagName("body")[0].style.background("black");
+
+
+    }
+<!--    iron.onclick=function(){-->
+<!--    alert("1");-->
+<!--    background.style.display="none";-->
+<!--    }-->
+
+
+
+      let selectedDeviceId;
+      //get the code info
+      const codeReader = new ZXing.BrowserMultiFormatReader()
+      //test for init
+      // console.log('Code reader initialized')
+      codeReader.listVideoInputDevices()
+
+        .then((videoInputDevices) => {
+          const sourceSelect = document.getElementById('sourceSelect')
+          selectedDeviceId = videoInputDevices[0].deviceId
+          if (videoInputDevices.length >= 1) {
+            videoInputDevices.forEach((element) => {
+              const sourceOption = document.createElement('option')
+              sourceOption.text = element.label
+              sourceOption.value = element.deviceId
+              sourceSelect.appendChild(sourceOption)
+            })
+            //sourceSelect.onchange=function().value;
+            sourceSelect.onchange = () => {
+              selectedDeviceId = sourceSelect.value;
+            };
+            //jqury: function(par){}=====(par)=>{}
+            const sourceSelectPanel = document.getElementById('sourceSelectPanel')
+            sourceSelectPanel.style.display = 'block'
+          }
+
+          document.getElementById('startButton').addEventListener('click', () => {
+            codeReader.decodeFromVideoDevice(selectedDeviceId, 'video', (result, err) => {
+              //when get result
+              if (result) {
+                console.log(result);
+                document.getElementById('result').textContent = result.text;
+                //document.getElementById('result1').innerHTML = '<span class="result">'+result.text+'</span>';
+
+                var confirm=document.getElementById('confirm');
+                confirm.onclick=function(){
+                    //获得result.text
+                    // alert(result.text);
+                    document.getElementById('barcodeR').value=result.text;
+
+                }
+
+              }
+
+
+              //when there is an error - show the number
+              if (err && !(err instanceof ZXing.NotFoundException)) {
+                console.error(err)
+                document.getElementById('result').textContent = err
+              }
+            })
+            console.log(`Started continous decode from camera with id ${selectedDeviceId}`)
+            var confirm=document.getElementById("confirm");
+            confirm.onclick=function(){
+
+            }
+
+          })
+
+          })
+
+          document.getElementById('resetButton').addEventListener('click', function(){
+            codeReader.reset()
+            document.getElementById('result').innerHTML = 'Please try again';
+            document.getElementById('barcodeR').value="";
+
+          })
+
+
+        })
+        .catch((err) => {
+          console.error(err)
+        })
+        function showDropdown() {
+        let click = document.getElementById('dropdown')
+        if (click.style.display === 'none') {
+          click.style.display = 'block'
+        } else {
+          click.style.display = 'none'
+        }
+      }
+      var ignoreClickOnMeElement = document.getElementById('dropdownMenuButton')
+
+      document.addEventListener('click', function (event) {
+        var isClickInsideElement = ignoreClickOnMeElement.contains(event.target)
+        console.log(isClickInsideElement)
+        if (!isClickInsideElement) {
+          let click = document.getElementById('dropdown')
+          if (click.style.display === 'block') {
+            click.style.display = 'none'
+          }
+        }
+      })
+
+
+  </script>
 
 {% endblock %}

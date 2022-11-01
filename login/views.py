@@ -74,6 +74,10 @@ def law_2(request):
     context = {}
     return render(request, "login/law_2.html", context)
 
+def lawpart2(request):
+    context = {}
+    return render(request, "login/lawpart2.html", context)
+
 
 def law_3(request):
     context = {}
@@ -88,11 +92,18 @@ def law_4(request):
 def com_law_1(request):
     context = {}
     return render(request, "login/com_law_1.html", context)
+def com_law_2(request):
+    context = {}
+    return render(request, "login/com_law_2.html", context)
 
 
 def com_law_3(request):
     context = {}
     return render(request, "login/com_law_3.html", context)
+
+def com_law_4(request):
+    context = {}
+    return render(request, "login/com_law_4.html", context)
 
 
 def category(request, cid):
