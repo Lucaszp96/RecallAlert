@@ -244,7 +244,7 @@
 	    <label>Do you give permission for this information to be shared with other government agencies:</label>
 	    <input type="checkbox" name="check" class="m-2 rounded-md border-gray-300 border-1 px-4 py-2" />
 	  </div>
-	    <button type="submit" class="bg-blue-800 w-full text-white h-10 rounded-md shadow-md hover:bg-blue-600 hover:text-gray-50">Confirm</button>
+	    <button type="submit" id=con class="bg-blue-800 w-full text-white h-10 rounded-md shadow-md hover:bg-blue-600 hover:text-gray-50">Confirm</button>
         </form>
     </div>
 </div>
@@ -315,6 +315,10 @@
     var iron=document.getElementById("iron1");
     var confirm=document.getElementById("confirm");
 
+    var con=document.getElementById("con");
+    con.onclick=function(){
+    alert("Feedback has been submitted")
+    }
 
 
     camera.onclick=function(){
