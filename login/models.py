@@ -26,7 +26,7 @@ class Product(models.Model):
     category_name = models.CharField(max_length=100)
 
     class Meta:
-        ordering = ["-created_date"]
+        ordering = ["created_date"]
 
     def __repr__(self):
         return f"{self.product_name} - {self.sn} - {self.created_date}"

@@ -33,15 +33,33 @@ def index(request):
     context = {}
     # for cat in Category.objects.all():
     #     print(cat.id, cat.title)
-    products = Product.objects.all()[:5]
+    products = Product.objects.all()[:10]
     context['products'] = products
     # print(products)
     return render(request, "login/index.html", context)
+
 
 def guidance(request):
     context = {}
     return render(request, "login/guidance.html", context)
 
+
+def research(request):
+    context = {}
+    return render(request, "login/research.html", context)
+
+def research_1(request):
+    context = {}
+    return render(request, "login/research_1.html", context)
+
+def research_2(request):
+    context = {}
+    return render(request, "login/research_2.html", context)
+
+def research_3(request):
+    context = {}
+    return render(request, "login/research_3.html", context)
+    
 def about(request):
     context = {}
     return render(request, "login/about.html", context)
@@ -56,20 +74,36 @@ def law_2(request):
     context = {}
     return render(request, "login/law_2.html", context)
 
+def lawpart2(request):
+    context = {}
+    return render(request, "login/lawpart2.html", context)
+
 
 def law_3(request):
     context = {}
     return render(request, "login/law_3.html", context)
 
 
+def law_4(request):
+    context = {}
+    return render(request, "login/law_4.html", context)
+
+
 def com_law_1(request):
     context = {}
     return render(request, "login/com_law_1.html", context)
+def com_law_2(request):
+    context = {}
+    return render(request, "login/com_law_2.html", context)
 
 
 def com_law_3(request):
     context = {}
     return render(request, "login/com_law_3.html", context)
+
+def com_law_4(request):
+    context = {}
+    return render(request, "login/com_law_4.html", context)
 
 
 def category(request, cid):
@@ -165,7 +199,7 @@ def ListShops(requests):
 class LoginViewSet(viewsets.ModelViewSet):
     queryset = User.objects.all()
     serializer_class = MyTokenSerializer
-    permission_classes = (IsAuthenticated,)
+    permission_classes = (IsAuthenticated, )
 
     def post(self, request, *args, **kwargs):
         serializer = self.get_serializer(data=request.data)

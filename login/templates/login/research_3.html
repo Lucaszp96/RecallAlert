@@ -1,0 +1,91 @@
+{% extends "login/base.html" %}
+{% load static %}
+
+{% block title %}
+<title>research</title>
+{% endblock %}
+
+{% block content %}
+<div class="rounded-md">
+  <div class="flex flex-col p-10 mx-auto">
+    <h1 class="p-10 text-5xl leading-9 font-extrabold text-left text-[#483D8B]">Research and reports overview</h1>
+    </br>
+    <body> <img src="{% static 'login/guidance/bar.jpg' %}" class="h-15"></body>
+
+
+   <h5 class="ml-20 text-4xl font-extrabold italic text-left text-[#000000]" id="Recomm">
+    </br>Recommended solutions
+    </h5>
+   <h3 class="ml-20 mr-20 text-2xl text-left text-[#000000]"> </br>
+    Products sold to consumers must be safe. If they are not, the seller must offer a replacement or refund, and may have to pay compensation.</h3>
+    </br>
+    <a target="_blank|_self|_parent|_top|framename" class="ml-20 mr-20 text-2xl text-left" href="https://www.sedgwick.com/">
+      <button onclick="a()"  style="color:#021AEE"  id="b1" >>>>Solution 1: Sedgwick - The Product Recall Specialists & Protecting Customers & Brands</button></a></br>
+    </p>
+    <img src="{% static 'login/research/company1.png' %}" style="margin:4px;width:400px; margin:auto"></br>
+
+    </br>
+    <h6 class="bg-[#E6E6FA] ml-20 mr-20 mx-auto square-[60px] text-[#000000] text-2xl">
+      <p class="m-5">
+      The world’s #1 provider of end-to-end recall solutions, from event planning to close-out。When your brand and reputation are on the line, you need a proven product recall partner。Services: Product recall consulting, Mock recall solutions, Customer notifications.
+      <p class="m-5">
+        - Effective Recall Planning
+      </p>
+      <p class="m-5">
+        - Product Recall Support</p>
+       <p class="m-5">
+        -  Facing a Live Recall? </p>
+      <p class="m-5">
+        -  Recall Call Center 24/7 </p>
+      </h6></br>
+      </p>
+    </br>
+
+      <a target="_blank|_self|_parent|_top|framename" class="ml-20 mr-20 text-2xl text-left" href="https://coghlan.com.au/product-recall/">
+      <button onclick="a()"  style="color:#021AEE"  id="b1" >>>>Solution 2: Coghlan</button> <img src="{% static 'login/research/company2.png' %}" style="margin:4px;width:400px; margin:auto">
+          </br></a></br>
+    </p>
+    <h6 class="bg-[#E6E6FA] ml-20 mr-20 mx-auto square-[60px] text-[#000000] text-2xl">
+      <p class="m-5">
+      Product recall solutions aim to:
+      <p class="m-5">
+        - Quickly personalise and form the perfect project management tool
+      </p>
+      <p class="m-5">
+        - Engage call centre resources to handle enquiries</p>
+       <p class="m-5">
+        - Structure the orderly and controlled collection of affected products </p>
+      <p class="m-5">
+        - Receive, check, and store the returned goods </p>
+      </h6></br>
+      </p>
+    </br>
+
+    <a target="_blank|_self|_parent|_top|framename" class="ml-20 mr-20 text-2xl text-left" href="https://auspost.com.au/business/marketing-and-communications/product-recall-solutions">
+      <button onclick="a()"  style="color:#021AEE"  id="b1" >>>>Solution 3: Australia Post</button></a></br>
+        <img src="{% static 'login/research/company3.png' %}" style="margin:4px;width:400px; margin:auto"></br>
+       <h6 class="bg-[#E6E6FA] ml-20 mr-20 mx-auto square-[60px] text-[#000000] text-2xl">
+      <p class="m-5">
+      Product recalls: A practical approach
+      <p class="m-5">
+        - Mail services to help with product recalls
+      </p>
+      <p class="m-5">
+       If your business needs to undertake a product recall, having an effective communications plan can be pivotal in helping to manage risk and avoid potential reputational risk down the track.</p>
+       <p class="m-5">
+       Explore the benefits of using mail to notify affected customers and let them know of any action they need to take, such as disposing of or returning the product. Depending on your business needs, you can also include tracking and identification checks, for added peace of mind. </p>
+      </h6></br>
+      </p>
+    </br>
+
+  </div>
+</div>
+<script>
+    function a()
+
+    {
+
+    document.getElementById("b1").style.color="#6495ED";}
+
+    </script>
+{% endblock %}
