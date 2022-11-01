@@ -203,11 +203,11 @@
 	  <h3 class="font-bold text-2xl text-gray-700 italic">Product Information</h3>
 	  <div class="flex justify-between">
 	    <label class="m-auto font-bold">Product Name: </label>
-	    <input type="text"  name="pname" class="w-3/4 m-2 rounded-md border-gray-300 border-1 px-4 py-2"  maxlength="50" spellcheck="true" required />
+	    <input type="text" id="pname" name="pname" class="w-3/4 m-2 rounded-md border-gray-300 border-1 px-4 py-2"  maxlength="50" spellcheck="true" required />
 	  </div>
 	  <div class="flex justify-between">
 	    <label class="m-auto font-bold">Product brands:</label>
-	    <input type="text" name="pbr" class="w-3/4 m-2 rounded-md border-gray-300 border-1 px-4 py-2"  maxlength="20" spellcheck="true" required />
+	    <input type="text" id="pbr" name="pbr" class="w-3/4 m-2 rounded-md border-gray-300 border-1 px-4 py-2"  maxlength="20" spellcheck="true" required />
 	  </div>
 	  <div  id="b" class="flex justify-between">
 	    <label class="m-auto font-bold">Product barcode</label>
@@ -216,21 +216,21 @@
 	  </div>
 	  <div class="flex justify-between">
 	    <label class="m-auto font-bold">Product Detail:</label>
-	    <input type="text" name="pdetail" class="w-3/4 m-2 rounded-md border-gray-300 border-1 px-4 py-2"  maxlength="200" spellcheck="true" required />
+	    <input type="text" id="pdetail" name="pdetail" class="w-3/4 m-2 rounded-md border-gray-300 border-1 px-4 py-2"  maxlength="200" spellcheck="true" required />
 	  </div>
 	  <hr />
 	  <h3 class="font-bold text-2xl text-gray-700 italic">Your Information</h3>
 	  <div class="flex justify-between">
 	    <label class="m-auto font-bold">Full Name :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </label>
-	    <input type="text" name="name" class="w-3/4 m-2 rounded-md border-gray-300 border-1 px-4 py-2"  maxlength="20" spellcheck="true" required />
+	    <input type="text" id="name" name="name" class="w-3/4 m-2 rounded-md border-gray-300 border-1 px-4 py-2"  maxlength="20" spellcheck="true" required />
 	  </div>
 	  <div class="flex justify-between">
 	    <label class="m-auto font-bold">Mobile Phone:</label>
-	    <input type="text" name="phone" class="w-3/4 m-2 rounded-md border-gray-300 border-1 px-4 py-2"  maxlength="20" spellcheck="true" required />
+	    <input type="text"id="phone" name="phone" class="w-3/4 m-2 rounded-md border-gray-300 border-1 px-4 py-2"  maxlength="20" spellcheck="true" required />
 	  </div>
 	  <div class="flex justify-between">
 	    <label class="m-auto font-bold">Email Address:</label>
-	    <input type="email" name="email" class="w-3/4 m-2 rounded-md border-gray-300 border-1 px-4 py-2"  maxlength="50" spellcheck="true" required />
+	    <input type="email" id="email" name="email" class="w-3/4 m-2 rounded-md border-gray-300 border-1 px-4 py-2"  maxlength="50" spellcheck="true" required />
 	  </div>
 	  <!-- <div>
 	    <label>Do you give permission for this information to be shared with other government agencies:</label>
@@ -299,129 +299,148 @@
         </div>
 </div>
 
-    <script type="text/javascript" src="https://unpkg.com/@zxing/library@latest/umd/index.min.js"></script>
-  <script type="text/javascript">
-    window.addEventListener('load', function () {
+<script type="text/javascript" src="https://unpkg.com/@zxing/library@latest/umd/index.min.js"></script>
+<script type="text/javascript">
+  window.addEventListener('load', function () {
 
-    var camera=document.getElementsByClassName("camera")[0];
-    var background=document.getElementsByClassName("containerr")[0];
-    var iron=document.getElementById("iron1");
-    var confirm=document.getElementById("confirm");
+  var camera=document.getElementsByClassName("camera")[0];
+  var background=document.getElementsByClassName("containerr")[0];
+  var iron=document.getElementById("iron1");
+  var confirm=document.getElementById("confirm");
+  var con=document.getElementById("con");
 
-    var con=document.getElementById("con");
-    con.onclick=function(){
-    alert("Feedback has been submitted")
-    }
+  function check(){
+  var pname=document.getElementById("pname").value;
+  var pbr=document.getElementById("pbr").value;
+  var barcodeR=document.getElementById("barcodeR").value;
+  var pdetail=document.getElementById("pdetail").value;
+  var name=document.getElementById("name").value;
+  var phone=document.getElementById("phone").value;
+  var email=document.getElementById("email").value;
+  if (pname==""||pbr==""||barcodeR==""||pdetail==""||name==""||name==""||phone==""||email==""){
+
+  return false;
+  }
+
+  return true;
+  };
 
 
-    camera.onclick=function(){
-        background.style.display="block";
-        // document.getElementsByTagName("body")[0].style.background("black");
+  con.onclick=function(){
+      if (check()==true){
+      alert("the feedback has been submitted !");
+  }
+  };
 
 
-    }
+  camera.onclick=function(){
+      background.style.display="block";
+      // document.getElementsByTagName("body")[0].style.background("black");
+
+
+  }
 <!--    iron.onclick=function(){-->
 <!--    alert("1");-->
-<!--    /*background.style.display="none";-->*/
+<!--    background.style.display="none";-->
 <!--    }-->
 
 
 
-      let selectedDeviceId;
-      //get the code info
-      const codeReader = new ZXing.BrowserMultiFormatReader()
-      //test for init
-      // console.log('Code reader initialized')
-      codeReader.listVideoInputDevices()
+    let selectedDeviceId;
+    //get the code info
+    const codeReader = new ZXing.BrowserMultiFormatReader()
+    //test for init
+    // console.log('Code reader initialized')
+    codeReader.listVideoInputDevices()
 
-        .then((videoInputDevices) => {
-          const sourceSelect = document.getElementById('sourceSelect')
-          selectedDeviceId = videoInputDevices[0].deviceId
-          if (videoInputDevices.length >= 1) {
-            videoInputDevices.forEach((element) => {
-              const sourceOption = document.createElement('option')
-              sourceOption.text = element.label
-              sourceOption.value = element.deviceId
-              sourceSelect.appendChild(sourceOption)
-            })
-            //sourceSelect.onchange=function().value;
-            sourceSelect.onchange = () => {
-              selectedDeviceId = sourceSelect.value;
-            };
-            //jqury: function(par){}=====(par)=>{}
-            const sourceSelectPanel = document.getElementById('sourceSelectPanel')
-            sourceSelectPanel.style.display = 'block'
-          }
+      .then((videoInputDevices) => {
+        const sourceSelect = document.getElementById('sourceSelect')
+        selectedDeviceId = videoInputDevices[0].deviceId
+        if (videoInputDevices.length >= 1) {
+          videoInputDevices.forEach((element) => {
+            const sourceOption = document.createElement('option')
+            sourceOption.text = element.label
+            sourceOption.value = element.deviceId
+            sourceSelect.appendChild(sourceOption)
+          })
+          //sourceSelect.onchange=function().value;
+          sourceSelect.onchange = () => {
+            selectedDeviceId = sourceSelect.value;
+          };
+          //jqury: function(par){}=====(par)=>{}
+          const sourceSelectPanel = document.getElementById('sourceSelectPanel')
+          sourceSelectPanel.style.display = 'block'
+        }
 
-          document.getElementById('startButton').addEventListener('click', () => {
-            codeReader.decodeFromVideoDevice(selectedDeviceId, 'video', (result, err) => {
-              //when get result
-              if (result) {
-                console.log(result);
-                document.getElementById('result').textContent = result.text;
-                //document.getElementById('result1').innerHTML = '<span class="result">'+result.text+'</span>';
+        document.getElementById('startButton').addEventListener('click', () => {
+          codeReader.decodeFromVideoDevice(selectedDeviceId, 'video', (result, err) => {
+            //when get result
+            if (result) {
+              console.log(result);
+              document.getElementById('result').textContent = result.text;
+              //document.getElementById('result1').innerHTML = '<span class="result">'+result.text+'</span>';
 
-                var confirm=document.getElementById('confirm');
-                confirm.onclick=function(){
-                    //获得result.text
-                    // alert(result.text);
-                    document.getElementById('barcodeR').value=result.text;
-
-                }
+              var confirm=document.getElementById('confirm');
+              confirm.onclick=function(){
+                  //获得result.text
+                  // alert(result.text);
+                  document.getElementById('barcodeR').value=result.text;
 
               }
-
-
-              //when there is an error - show the number
-              if (err && !(err instanceof ZXing.NotFoundException)) {
-                console.error(err)
-                document.getElementById('result').textContent = err
-              }
-            })
-            console.log(`Started continous decode from camera with id ${selectedDeviceId}`)
-            var confirm=document.getElementById("confirm");
-            confirm.onclick=function(){
 
             }
 
+
+            //when there is an error - show the number
+            if (err && !(err instanceof ZXing.NotFoundException)) {
+              console.error(err)
+              document.getElementById('result').textContent = err
+            }
           })
+          console.log(`Started continous decode from camera with id ${selectedDeviceId}`)
+          var confirm=document.getElementById("confirm");
+          confirm.onclick=function(){
 
-          })
-
-          document.getElementById('resetButton').addEventListener('click', function(){
-            codeReader.reset()
-            document.getElementById('result').innerHTML = 'Please try again';
-            document.getElementById('barcodeR').value="";
-
-          })
-
+          }
 
         })
-        .catch((err) => {
-          console.error(err)
+
         })
-        function showDropdown() {
+
+        document.getElementById('resetButton').addEventListener('click', function(){
+          codeReader.reset()
+          document.getElementById('result').innerHTML = 'Please try again';
+          document.getElementById('barcodeR').value="";
+
+        })
+
+
+      })
+      .catch((err) => {
+        console.error(err)
+      })
+      function showDropdown() {
+      let click = document.getElementById('dropdown')
+      if (click.style.display === 'none') {
+        click.style.display = 'block'
+      } else {
+        click.style.display = 'none'
+      }
+    }
+    var ignoreClickOnMeElement = document.getElementById('dropdownMenuButton')
+
+    document.addEventListener('click', function (event) {
+      var isClickInsideElement = ignoreClickOnMeElement.contains(event.target)
+      console.log(isClickInsideElement)
+      if (!isClickInsideElement) {
         let click = document.getElementById('dropdown')
-        if (click.style.display === 'none') {
-          click.style.display = 'block'
-        } else {
+        if (click.style.display === 'block') {
           click.style.display = 'none'
         }
       }
-      var ignoreClickOnMeElement = document.getElementById('dropdownMenuButton')
-
-      document.addEventListener('click', function (event) {
-        var isClickInsideElement = ignoreClickOnMeElement.contains(event.target)
-        console.log(isClickInsideElement)
-        if (!isClickInsideElement) {
-          let click = document.getElementById('dropdown')
-          if (click.style.display === 'block') {
-            click.style.display = 'none'
-          }
-        }
-      })
+    })
 
 
-  </script>
+</script>
 
 {% endblock %}
