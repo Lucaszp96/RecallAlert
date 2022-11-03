@@ -111,7 +111,7 @@ def category(request, cid):
     # category = get_object_or_404(Category, id=cid)
     # products = category.product_set.all()
     products = Product.objects.filter(
-        category_name__icontains=cat_names[int(cid)]).all()
+        category_name__icontains=cat_names[int(cid)-1]).all()
 
     context['current'] = str(int(cid) - 1)
     context['products'] = products
